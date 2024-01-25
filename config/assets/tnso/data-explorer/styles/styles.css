@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+#id_home_page {
+  background-image: url('/assets/tnso/data-explorer/images/tnso-bg.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #001b53;
+  background-attachment: fixed;
+}

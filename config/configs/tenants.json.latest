@@ -1,0 +1,196 @@
+{
+  "tnso": {
+    "id": "tnso",
+    "label": "tnso",
+    "default": true,
+    "spaces": {
+      "release": {
+        "label": "release",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": false,
+        "url": "https://nsiws2-stathub-dev.nso.go.th/rest",
+        "urlv3": "https://nsiws2-stathub-dev.nso.go.th/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      },
+      "design": {
+        "label": "design",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": true,
+        "url": "https://nsiws1-stathub-dev.nso.go.th/rest",
+        "urlv3": "https://nsiws1-stathub-dev.nso.go.th/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      },
+      "training": {
+        "label": "training",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": true,
+        "url": "https://nsiws3-stathub-dev.nso.go.th/rest",
+        "urlv3": "https://nsiws3-stathub-dev.nso.go.th/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      },
+      "public": {
+        "label": "public",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": true,
+        "url": "https://ns1-stathub.nso.go.th/rest",
+        "urlv3": "https://ns1-stathub.nso.go.th/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      }
+    },
+    "datasources": {
+      "ds-release": {
+        "dataSpaceId": "release",
+        "indexed": true,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      },
+      "ds-design": {
+        "dataSpaceId": "design",
+        "indexed": false,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      },
+      "ds-training": {
+        "dataSpaceId": "training",
+        "indexed": false,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      },
+      "ds-public": {
+        "dataSpaceId": "public",
+        "indexed": false,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      }
+    },
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm",
+        "oidc": {
+          "authority": "https://auth-stathub-dev.nso.go.th/auth/realms/tnso",
+          "client_id": "stat-suite"
+        },
+        "spaces": [
+          {
+            "id": "release",
+            "color": "white",
+            "backgroundColor": "#606A80",
+            "label": "2. release",
+            "transferUrl": "https://transfer-stathub-dev.nso.go.th/2",
+            "dataExplorerUrl": "https://stathub-dev.nso.go.th"
+          },
+          {
+            "id": "design",
+            "color": "white",
+            "backgroundColor": "#735667",
+            "label": "1. design",
+            "transferUrl": "https://transfer-stathub-dev.nso.go.th/2",
+            "dataExplorerUrl": "https://stathub-dev.nso.go.th"
+          },
+          {
+            "id": "training",
+            "color": "white",
+            "backgroundColor": "#56736A",
+            "label": "training",
+            "transferUrl": "https://transfer-stathub-dev.nso.go.th/2",
+            "dataExplorerUrl": "https://stathub-dev.nso.go.th"
+          },
+          {
+            "id": "public",
+            "color": "white",
+            "backgroundColor": "#ff6100",
+            "label": "3. public (demo-design)",
+            "transferUrl": "https://tran-stathub.nso.go.th/2",
+            "dataExplorerUrl": "https://stathub.nso.go.th"
+          }
+        ]
+      },
+      "de": {
+        "type": "de",
+        "label": "de",
+        "oidc": {
+          "authority": "https://auth-stathub-dev.nso.go.th/auth/realms/tnso",
+          "client_id": "stat-suite",
+          "required": false
+        },
+        "spaces": [
+          "release",
+          "design",
+          "training",
+          "public"
+        ],
+        "datasources": [
+          "ds-release",
+          "ds-design",
+          "ds-training",
+          "ds-public"
+        ]
+      }
+    }
+  }
+}

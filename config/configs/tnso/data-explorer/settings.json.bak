@@ -1,0 +1,41 @@
+{
+    "i18n": {
+        "locales": {
+            "fr": {
+                "id": "fr",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "MMM YYYY"
+                },
+                "es": {
+                "id": "es",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "MMM YYYY"
+                },
+                "it": {
+                "id": "it",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "MMM YYYY"
+                },
+                "ar": {
+                "id": "ar",
+                "isRtl": true,
+                "delimiters": { "thousands": " ", "decimal": ","  }
+                },
+                "km": {
+                "id": "km",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "YYYY-MMM"
+                },
+                "nl": {
+                "id": "nl",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "YYYY-MMM"
+                },
+                "de": {
+                "id": "de",
+                "delimiters": { "thousands": " ", "decimal": ","  },
+                "timeFormat": "MMM YYYY"
+                },
+        }
+    }
+}

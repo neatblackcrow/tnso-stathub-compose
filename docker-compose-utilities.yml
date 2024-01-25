@@ -1,0 +1,28 @@
+---
+
+version: "3.5"
+
+services:
+  httpd:
+    build: ./builds/httpd
+    image: httpd:2.4-alpine-custom
+    container_name: httpd
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - "./logs/httpd:/var/logs/apache2"
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      dotstat_network:
+        ipv4_address: 192.168.192.12
+
+networks:
+  dotstat_network:
+    name: dotstat_common_network
+    ipam:
+      config:
+        - subnet: 192.168.192.0/20
+    driver_opts:
+      com.docker.network.bridge.name: br-dotstat

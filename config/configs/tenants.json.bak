@@ -1,0 +1,116 @@
+{
+  "tnso": {
+    "id": "tnso",
+    "label": "tnso",
+    "default": true,
+    "spaces": {
+      "release": {
+        "label": "release",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": false,
+        "url": "http://172.19.2.57:82/rest",
+        "urlv3": "http://172.19.2.57:82/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      },
+      "design": {
+        "label": "design",
+        "hasRangeHeader": true,
+        "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
+        "hasLastNObservations": true,
+        "url": "http://172.19.2.57:81/rest",
+        "urlv3": "http://172.19.2.57:81/rest/v2",
+        "headers": {
+          "data": {
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
+      }
+    },
+    "datasources": {
+      "ds-release": {
+        "dataSpaceId": "release",
+        "indexed": true,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      },
+      "ds-design": {
+        "dataSpaceId": "design",
+        "indexed": false,
+        "dataqueries": [
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_INDIC",
+            "agencyId": "TNSO"
+          },
+          {
+            "version": "1.0",
+            "categorySchemeId": "CAT_STAT_SECT",
+            "agencyId": "TNSO"
+          }
+        ]
+      }
+    },
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm",
+        "oidc": {
+          "authority": "http://172.19.2.57:8080/auth/realms/tnso",
+          "client_id": "stat-suite"
+        },
+        "spaces": [
+          {
+            "id": "release",
+            "color": "white",
+            "backgroundColor": "#606A80",
+            "label": "release",
+            "transferUrl": "http://172.19.2.57:93/2",
+            "dataExplorerUrl": "http://172.19.2.57:7001"
+          },
+          {
+            "id": "design",
+            "color": "white",
+            "backgroundColor": "#735667",
+            "label": "design",
+            "transferUrl": "http://172.19.2.57:93/2",
+            "dataExplorerUrl": "http://172.19.2.57:7001"
+          }
+        ]
+      },
+      "de": {
+        "type": "de",
+        "label": "de",
+        "oidc": {
+          "authority": "http://172.19.2.57:8080/auth/realms/tnso",
+          "client_id": "stat-suite",
+          "required": false
+        },
+        "spaces": [
+          "release",
+          "design"
+        ],
+        "datasources": [
+          "ds-release",
+          "ds-design"
+        ]
+      }
+    }
+  }
+}
